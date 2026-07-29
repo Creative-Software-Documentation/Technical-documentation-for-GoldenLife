@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="assets/images/favicon.png" rel="icon" />
+<title>API Documentation | Golden life Platforn</title>
+<meta name="description" content="Golden life Platforn API Documentation">
+<meta name="author" content="harnishdesign.net">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+  code { color:#d6336c; background:#f8f0f2; padding:2px 6px; border-radius:4px; }
+  .badge-method { display:inline-block; min-width:60px; text-align:center; padding:4px 8px; border-radius:4px; color:#fff; font-weight:600; font-size:12px; }
+  .badge-get { background:#2e7d32; }
+  .badge-post { background:#1565c0; }
+  .badge-put { background:#ef6c00; }
+  .badge-delete { background:#c62828; }
+  .table-routes td, .table-routes th { vertical-align:middle; }
+  .middleware-tag { background:#f1f3f5; border:1px solid #dee2e6; padding:2px 8px; border-radius:12px; font-size:12px; }
+  .admin-placeholder { border:2px dashed rgb(50,101,243); border-radius:8px; padding:30px; text-align:center; background:#f8f9ff; }
+</style>
+
+</head>
+
+<body class="box" data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+      <div class="container-fluid">
+        <!-- Sidebar Toggler -->
+        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button">
+            <span></span><span class="w-75"></span><span class="w-50"></span>
+        </button>
+        
+        <!-- Logo --> 
+        <a class="logo ml-md-2" href="index.html" title="Golden life Platforn API Documentation"> 
+            <img src="assets/images/goldenlife.png" height="60px" width="180px" alt="Golden life Platforn API"/> 
+        </a> 
+        
+        <!-- Logo End -->
+        
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav">
+            <span></span><span></span><span></span>
+        </button>
+        
+        <div id="header-nav" class="collapse navbar-collapse justify-content-end"> 
+          <!-- Search Form -->
+          <form class="form-inline ml-lg-3">
+            <div class="input-group" style="height: 32px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent border-right-0" style="padding: 4px 8px;">
+                  <i class="fas fa-search text-muted"></i>
+                </span>
+              </div>
+              <input id="searchInput" class="form-control border-left-0" type="search" placeholder="Search routes..." aria-label="Search" style="background-color: #f8f9fa; border-color: #ced4da; padding: 4px 8px;">
+            </div>
+          </form>                   
+          
+        </div>
+        <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+          <li><a data-toggle="tooltip" href="https://x.com/CreativeSoftbd" target="_blank" title="" data-original-title="x"><i class="bi bi-twitter-x"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.linkedin.com/company/creative-software-bangladesh/" target="_blank" title="" data-original-title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.youtube.com/@CourierSoftwarebd" target="_blank" title="" data-original-title="youtube"><i class="fab fa-youtube"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.facebook.com/CreativeSoftware.com.bd" target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar End --> 
+  </header>
+  <!-- Header End --> 
+  
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+    <!-- Sidebar Navigation
+    ============================ -->
+    <div class="idocs-navigation bg-light">
+      <ul class="nav flex-column" id="navList">
+        <li class="nav-item"><a class="nav-link active text-primary" href="#api_start">Overview</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#api_requirement">Base URL &amp; Requirement</a></li>
+
+        <li class="nav-item"><a class="nav-link active" href="#api_auth">Authentication</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#auth_student">Student Auth</a></li>
+            <li class="nav-item"><a class="nav-link" href="#auth_vendor">Vendor Auth</a></li>
+            <li class="nav-item"><a class="nav-link" href="#auth_instructor">Instructor Auth</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#student_module">Student Module</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#student_profile">Profile &amp; Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="#student_dashboard">Dashboard &amp; Wallet</a></li>
+            <li class="nav-item"><a class="nav-link" href="#student_address">Address</a></li>
+            <li class="nav-item"><a class="nav-link" href="#student_orders">Orders &amp; Txn</a></li>
+            <li class="nav-item"><a class="nav-link" href="#student_checkin">Referral &amp; Daily Rewards</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#vendor_module">Vendor Module</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#vendor_profile">Profile &amp; Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vendor_product">Product Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vendor_banner">Banner Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vendor_orders">Orders &amp; Txn</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vendor_wallet">Wallet &amp; Dashboard</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#instructor_module">Instructor Module</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#instructor_profile">Profile &amp; Banner</a></li>
+            <li class="nav-item"><a class="nav-link" href="#instructor_course">Course Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#instructor_orders">Orders</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#public_product_course">Public Catalog APIs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#location_api">Location APIs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bank_api">Bank APIs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#notification_api">Notification APIs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq_api">FAQ &amp; Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ticket_api">Support Tickets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#chat_api">Chat API</a></li>
+        <li class="nav-item"><a class="nav-link" href="#subscription_api">Subscription &amp; Shares</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hospital_api">Hospital API</a></li>
+        <li class="nav-item"><a class="nav-link" href="#misc_api">Charges &amp; Rates</a></li>
+        <li class="nav-item"><a class="nav-link" href="#admin_module">Admin Module</a></li>
+        <li class="nav-item"><a class="nav-link" href="#api_credits">Credits &amp; Resources</a></li>
+        <li class="nav-item"><a class="nav-link" href="#api_support">Support</a></li>
+      </ul>
+    </div>
+    
+    <!-- Docs Content
+    ============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Overview -->
+        <section id="api_start">
+          <div class="row justify-content-center">
+            <div class="mx-auto mb-4">
+              <h2>Golden life Platforn API <small class="lead">(FULL PROJECT OVERVIEW)</small></h2>
+
+              <div class="about">
+                <h3>About this API</h3>
+                <p class="paragraph" style="margin: 20px 0;text-align: justify;">
+                  This Laravel based REST API powers a multi-role Golden life Platforn that connects
+                  <b>Students (customers/resellers)</b>, <b>Vendors (product sellers)</b> and
+                  <b>Instructors (course sellers)</b> under a single system. The platform combines
+                  e-commerce (product purchase &amp; delivery), an online course/learning marketplace,
+                  a digital wallet with send-money/withdraw features, subscription plans, share
+                  purchase, and a support/ticketing system — all controlled from one Admin Panel.
+                </p>
+              </div>
+
+              <div class="used">
+                <h3>How the API is organized</h3>
+                <p class="paragraph" style="margin: 20px 0;text-align: justify;">
+                  Every route below is taken directly from <code>routes/api.php</code>. Routes are grouped
+                  by the role that consumes them (Student, Vendor, Instructor) and by feature
+                  (Product, Course, Location, Bank, Notification, FAQ, Ticket, Chat, Subscription,
+                  Share, Hospital). Most protected routes use Laravel Sanctum
+                  (<span class="middleware-tag">auth:sanctum</span>) issued after OTP/Password login;
+                  a smaller set of legacy/admin-facing routes use API token guard
+                  (<span class="middleware-tag">auth:api</span>). Routes without any tag below are public.
+                </p>
+              </div>
+
+              <div class="softwares">
+                <div class="row mx-auto mb-4">
+                  <div class="col-lg-3 col-md-6 mb-3 mb-lg-0 px-2"> 
+                    <div class="text-center" style="border: 2px solid rgb(50, 101, 243);">
+                      <p class="mt-2">Student / Customer</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-3 mb-lg-0 px-2"> 
+                    <div class="text-center" style="border: 2px solid rgb(50, 101, 243);">
+                      <p class="mt-2">Vendor / Seller</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-3 mb-lg-0 px-2"> 
+                    <div class="text-center" style="border: 2px solid rgb(50, 101, 243);">
+                      <p class="mt-2">Instructor</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-3 mb-lg-0 px-2"> 
+                    <div class="text-center" style="border: 2px solid rgb(50, 101, 243);">
+                      <p class="mt-2">Admin <small>(reserved)</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <div class="border px-5 text-center" style="width: 400px; height: 50px; margin-right: 10px;">
+                  <a href="#api_requirement">
+                     <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+                  </a>
+                </div>
+              </div>
+
+            </div>           
+          </div>
+        </section>
+          
+        <hr class="divider">
+      
+        <!-- Base URL & Requirement -->
+        <section id="api_requirement">
+          <div class="requirement_server">
+            <h2>Base URL &amp; Requirement</h2>
+            <div class="info">
+              <h3>Framework</h3>
+              <p>Built on <b>Laravel</b> and consumed by web / mobile apps as a JSON REST API.
+                All endpoints below are relative to your API base URL, e.g. <code>https://yourdomain.com/api</code>.</p>
+
+              <h5>Authentication Guards</h5>
+              <ul class="list">
+                <li><span class="middleware-tag">auth:sanctum</span> — Token issued to Student / Vendor / Instructor after login (send as <code>Authorization: Bearer &lt;token&gt;</code>).</li>
+                <li><span class="middleware-tag">auth:api</span> — Token guard used mainly on legacy/admin-consumed transaction &amp; order reporting routes.</li>
+                <li><span class="middleware-tag">public</span> — No token required.</li>
+              </ul>
+
+              <h5 class="mt-4">Response Format</h5>
+              <p>All endpoints are expected to return JSON. Standard verbs used across the API:</p>
+              <ul class="list">
+                <li><span class="badge-method badge-get">GET</span> Read / list data</li>
+                <li><span class="badge-method badge-post">POST</span> Create, login, or action-trigger endpoints</li>
+                <li><span class="badge-method badge-put">PUT</span> Update a specific resource</li>
+                <li><span class="badge-method badge-delete">DELETE</span> Remove a resource</li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <div class="col border mr-2 text-center">
+                <a href="#api_start">
+                  <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+                </a>
+              </div>
+              <div class="col border ml-2 text-center">
+                <a href="#api_auth">
+                  <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Authentication -->
+        <section id="api_auth">
+          <h3>Authentication</h3>
+          <p style="margin: 20px 0;text-align: justify;">Three separate identity types can register and log in: Student, Vendor and Instructor. Each has its own registration, OTP verification, login, forgot/reset password, and logout endpoints.</p>
+
+          <div id="auth_student" class="mb-4">
+            <h4>Student Authentication</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/register</code></td><td>public</td><td>Register a new student account.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/verify-otp</code></td><td>public</td><td>Verify OTP sent during registration.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/login</code></td><td>public</td><td>Login with mobile/email &amp; password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/login/send-otp</code></td><td>public</td><td>Send OTP for OTP-based student login.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/login/verify-otp</code></td><td>public</td><td>Verify OTP and log the student in.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/password/forgot</code></td><td>public</td><td>Send OTP for forgotten password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/password/reset</code></td><td>public</td><td>Reset password using OTP.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/pin/forgot</code></td><td>public</td><td>Send OTP for forgotten wallet PIN.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/pin/reset</code></td><td>public</td><td>Reset wallet PIN using OTP.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/set-pin</code></td><td>auth:sanctum</td><td>Set wallet PIN for the first time.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/logout</code></td><td>auth:sanctum</td><td>Logout the current student session/token.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="auth_vendor" class="mb-4">
+            <h4>Vendor Authentication</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/register</code></td><td>public</td><td>Register a new vendor (seller) account.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/verify-otp</code></td><td>public</td><td>Verify OTP sent during vendor registration.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login/send-otp</code></td><td>public</td><td>Send OTP for vendor OTP-based login.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login/verify-otp</code></td><td>public</td><td>Verify OTP and log the vendor in.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login</code></td><td>public</td><td>Login with mobile/email &amp; password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/logout</code></td><td>auth:sanctum</td><td>Logout the current vendor session/token.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="auth_instructor" class="mb-4">
+            <h4>Instructor Authentication</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/register</code></td><td>public</td><td>Register a new instructor account.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/verify-otp</code></td><td>public</td><td>Verify OTP sent during instructor registration.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login</code></td><td>public</td><td>Login with email/mobile &amp; password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login-otp-send</code></td><td>public</td><td>Send OTP for instructor OTP-based login.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login-otp-verify</code></td><td>public</td><td>Verify OTP and log the instructor in.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/forgot-password-otp</code></td><td>public</td><td>Send OTP for forgotten password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/reset-password</code></td><td>public</td><td>Reset password using OTP.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/resend-otp</code></td><td>public</td><td>Resend the last OTP to the instructor.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/logout</code></td><td>auth:sanctum</td><td>Logout the current instructor session.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col border mr-2 text-center">
+              <a href="#api_requirement">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#student_module">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Student Module -->
+        <section id="student_module">
+          <h3>Student Module</h3>
+          <p style="margin: 20px 0;text-align: justify;">Once logged in, students can view profile details, buy products/courses, manage delivery addresses, process wallet transfers, track orders, and interact with daily check-ins.</p>
+
+          <div id="student_profile" class="mb-4">
+            <h4>Profile &amp; Info</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/profile</code></td><td>auth:sanctum</td><td>Get logged-in student's profile summary.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/personal-info</code></td><td>auth:sanctum</td><td>Get personal information section.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/document-info</code></td><td>auth:sanctum</td><td>Get uploaded documents (NID etc.) info.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/nominee-info</code></td><td>auth:sanctum</td><td>Get nominee information.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/additional-info</code></td><td>auth:sanctum</td><td>Get additional profile information.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/basic-info</code></td><td>prefix: student</td><td>Update basic info (name, mobile, etc.).</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/personal-info</code></td><td>prefix: student</td><td>Update personal information.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/document-info</code></td><td>prefix: student</td><td>Upload/update documents.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/nominee-info</code></td><td>prefix: student</td><td>Update nominee information.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/additional-info</code></td><td>prefix: student</td><td>Update additional information.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/password</code></td><td>prefix: student</td><td>Change account password.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="student_dashboard" class="mb-4">
+            <h4>Dashboard, Wallet &amp; Navbar</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/dashboard</code></td><td>auth:sanctum</td><td>Get student dashboard summary widgets.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/navbar</code></td><td>auth:sanctum</td><td>Get navbar data (name, avatar, wallet snippet).</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/wallet-balance</code></td><td>auth:sanctum</td><td>Get current wallet balance.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/wallethistory</code></td><td>auth:sanctum</td><td>Get wallet transaction history.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/details/{id}</code></td><td>public</td><td>Get a vendor's public storefront details.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/getProductCategory</code></td><td>auth:sanctum / public</td><td>Get product category list.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/products/{id}</code></td><td>auth:sanctum</td><td>Get a single product's details.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/products</code></td><td>public</td><td>Get full product listing.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/products/category</code></td><td>public</td><td>Get products filtered by category.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/courses</code></td><td>auth:sanctum</td><td>Get enrolled or purchasable course list.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/course</code></td><td>auth:sanctum</td><td>Get single course details for student.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/checkout/{type?}/{id?}</code></td><td>auth:sanctum</td><td>Get checkout summary for order.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/getDeliveryCharge</code></td><td>auth:sanctum</td><td>Calculate delivery charge for selected address.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="student_address" class="mb-4">
+            <h4>Address</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/address/store</code></td><td>auth:api</td><td>Save a new delivery address.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/addresses</code></td><td>auth:api</td><td>Get all saved addresses.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/address/select</code></td><td>auth:api</td><td>Select active delivery address.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/getAll-OderAddress</code></td><td>public</td><td>Get order address list.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="student_orders" class="mb-4">
+            <h4>Orders &amp; Transactions</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/Orderstore</code></td><td>prefix: student</td><td>Place a new order (product/course).</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/orders</code></td><td>auth:api</td><td>Get the student's order list.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/order-details</code></td><td>auth:api</td><td>Get a single order's full details.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/order-tracking</code></td><td>auth:api</td><td>Track an order's status timeline.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/orders/status-wise</code></td><td>auth:api</td><td>Get orders grouped by status.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/transactions</code></td><td>auth:api</td><td>Get transaction history.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/approved-transactions</code></td><td>auth:api</td><td>Get approved transactions.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/transactions</code></td><td>auth:api</td><td>Create new transaction (add-money request).</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/transactions</code></td><td>auth:api</td><td>Get all transactions.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/transactions/{id}/{status}</code></td><td>auth:api</td><td>Approve/reject a transaction status.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/add_money_invoiceNumber</code></td><td>auth:sanctum</td><td>Generate invoice number for add-money.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/getPin</code></td><td>auth:sanctum</td><td>Check if wallet PIN is set.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/send-money</code></td><td>auth:sanctum</td><td>Send money from wallet to another user.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/search-receiver</code></td><td>auth:sanctum</td><td>Search receiver by mobile or ID.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/course-order-history</code></td><td>auth:api</td><td>Get course order history.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/course-order-history-by-type</code></td><td>auth:api</td><td>Get course order history filtered by type.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="student_checkin" class="mb-4">
+            <h4>Referral &amp; Daily Check-In</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/referral-link</code></td><td>auth:sanctum</td><td>Get referral link/code.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/referred-students</code></td><td>auth:sanctum</td><td>Get list of referred students.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/student/check-in/status</code></td><td>auth:sanctum</td><td>Get today's check-in status.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/check-in/claim</code></td><td>auth:sanctum</td><td>Claim daily check-in reward.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col border mr-2 text-center">
+              <a href="#api_auth">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#vendor_module">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Vendor Module -->
+        <section id="vendor_module">
+          <h3>Vendor Module</h3>
+          <p style="margin: 20px 0;text-align: justify;">Vendors manage their shop details, e-commerce products, promotional banners, sales orders, and wallet payouts.</p>
+
+          <div id="vendor_profile" class="mb-4">
+            <h4>Profile &amp; Shop</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/profile</code></td><td>auth:sanctum</td><td>Get vendor profile.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/profile</code></td><td>auth:sanctum</td><td>Update vendor profile.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/profile/update</code></td><td>auth:sanctum</td><td>Extended profile update endpoint.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/password/update</code></td><td>auth:sanctum</td><td>Change vendor password.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/shop</code></td><td>auth:sanctum</td><td>Create/save shop details.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/shops</code></td><td>auth:sanctum</td><td>Get vendor's shops.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/verification</code></td><td>auth:sanctum</td><td>Submit business verification documents.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="vendor_product" class="mb-4">
+            <h4>Product Management</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/ecommerce/categories</code></td><td>auth:sanctum</td><td>Get product categories.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/ecommerce/subcategories</code></td><td>auth:sanctum</td><td>Get subcategories.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/course/categories</code></td><td>auth:sanctum</td><td>Get course categories.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/product/store</code></td><td>auth:sanctum</td><td>Add a new product.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/product/update</code></td><td>auth:sanctum</td><td>Update existing product.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/product/list</code></td><td>auth:sanctum</td><td>Get vendor product list.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/product/details</code></td><td>auth:sanctum</td><td>Get single product details.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/generate-sku</code></td><td>auth:sanctum</td><td>Auto-generate product SKU/barcode.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/profit</code></td><td>auth:sanctum</td><td>Get profit summary for vendor's products.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="vendor_banner" class="mb-4">
+            <h4>Banner Management</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/banner</code></td><td>auth:sanctum</td><td>Get shop banners.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/banner</code></td><td>auth:sanctum</td><td>Upload a new banner.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/banner/update</code></td><td>auth:sanctum</td><td>Update existing banner.</td></tr>
+                  <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/vendor/banner</code></td><td>auth:sanctum</td><td>Delete a banner.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="vendor_orders" class="mb-4">
+            <h4>Orders &amp; Transactions</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/order/tracking</code></td><td>auth:sanctum</td><td>Track product orders.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/orders/history</code></td><td>auth:sanctum</td><td>Get vendor's full order history.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/updatetStatus/order</code></td><td>public</td><td>Update order fulfillment status.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/transactions/history</code></td><td>auth:sanctum</td><td>Get transaction history.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="vendor_wallet" class="mb-4">
+            <h4>Wallet &amp; Dashboard</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/wallet</code></td><td>auth:sanctum</td><td>Get vendor wallet balance.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/wallet-history</code></td><td>auth:sanctum</td><td>Get wallet history.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/dashboard</code></td><td>auth:sanctum</td><td>Get mobile app dashboard summary.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/WebDashboard</code></td><td>auth:sanctum</td><td>Get web panel dashboard summary.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/vendor/navbar</code></td><td>auth:sanctum</td><td>Get vendor navbar data.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col border mr-2 text-center">
+              <a href="#student_module">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#instructor_module">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Instructor Module -->
+        <section id="instructor_module">
+          <h3>Instructor Module</h3>
+          <p style="margin: 20px 0;text-align: justify;">Instructors handle profile management, build dynamic courses (with modules, lessons, and quizzes), and monitor course purchases.</p>
+
+          <div id="instructor_profile" class="mb-4">
+            <h4>Profile &amp; Banner</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/profile</code></td><td>auth:sanctum</td><td>Get instructor profile.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/profile/update</code></td><td>auth:sanctum</td><td>Update instructor profile.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/profile/delete-field</code></td><td>auth:sanctum</td><td>Clear a specific profile field.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/password/update</code></td><td>auth:sanctum</td><td>Update password.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/WebDashboard</code></td><td>auth:sanctum</td><td>Get web panel dashboard.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/banner</code></td><td>auth:sanctum</td><td>Get instructor banners.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/banner</code></td><td>auth:sanctum</td><td>Upload banner.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/banner/update</code></td><td>auth:sanctum</td><td>Update banner.</td></tr>
+                  <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/instructor/banner</code></td><td>auth:sanctum</td><td>Delete banner.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="instructor_course" class="mb-4">
+            <h4>Course Management</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/courses</code></td><td>auth:sanctum</td><td>Get instructor's courses.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/{id}/modules</code></td><td>auth:sanctum</td><td>Add module to course.</td></tr>
+                  <tr><td><span class="badge-method badge-put">PUT</span></td><td><code>/modules/{id}</code></td><td>auth:sanctum</td><td>Update module.</td></tr>
+                  <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/modules/{id}</code></td><td>auth:sanctum</td><td>Delete module.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/modules/{id}/lessons</code></td><td>auth:sanctum</td><td>Add lesson to module.</td></tr>
+                  <tr><td><span class="badge-method badge-put">PUT</span></td><td><code>/lessons/{id}</code></td><td>auth:sanctum</td><td>Update lesson.</td></tr>
+                  <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/lessons/{id}</code></td><td>auth:sanctum</td><td>Delete lesson.</td></tr>
+                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/{id}/quizzes</code></td><td>auth:sanctum</td><td>Add quiz to course.</td></tr>
+                  <tr><td><span class="badge-method badge-put">PUT</span></td><td><code>/quizzes/{id}</code></td><td>auth:sanctum</td><td>Update quiz.</td></tr>
+                  <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/quizzes/{id}</code></td><td>auth:sanctum</td><td>Delete quiz.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="instructor_orders" class="mb-4">
+            <h4>Orders</h4>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-routes">
+                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/order/tracking</code></td><td>auth:sanctum</td><td>Track course orders.</td></tr>
+                  <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor/orders/history</code></td><td>auth:sanctum</td><td>Get course sales history.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col border mr-2 text-center">
+              <a href="#vendor_module">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#public_product_course">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Public Catalog -->
+        <section id="public_product_course">
+          <h3>Product &amp; Course APIs (Public)</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/product/list</code></td><td>public</td><td>Get public product catalog.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/product/details/{id}</code></td><td>public</td><td>Get single product details.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/products/search</code></td><td>public</td><td>Search products by keyword.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/teacher/list</code></td><td>public</td><td>Get instructor listing.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/course/list</code></td><td>public</td><td>Get public course catalog.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/course/details</code></td><td>public</td><td>Get course details.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/course/chapter-lesson/{id}</code></td><td>public</td><td>Get course chapter &amp; lesson structure.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/category-wise</code></td><td>public</td><td>Filter courses by category.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/instructor-wise</code></td><td>public</td><td>Filter courses by instructor.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/event/index</code></td><td>public</td><td>Get list of events.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/qna/index</code></td><td>public</td><td>Get Q&amp;A list.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/store</code></td><td>auth:sanctum</td><td>Create a new course.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/update</code></td><td>auth:sanctum</td><td>Update existing course.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/delete</code></td><td>auth:sanctum</td><td>Delete a course.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/courses/category/index</code></td><td>public</td><td>Get course categories.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/category/store</code></td><td>public</td><td>Create course category.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/category/update</code></td><td>public</td><td>Update course category.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/courses/category/delete</code></td><td>public</td><td>Delete course category.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#instructor_module">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#location_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Location APIs -->
+        <section id="location_api">
+          <h3>Location APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/divisions</code></td><td>public</td><td>Get all divisions.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/districts</code></td><td>public</td><td>Get all districts.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/dist-area</code></td><td>public</td><td>Get districts filtered by division.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/thanas</code></td><td>public</td><td>Get all thanas.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/thana-area</code></td><td>public</td><td>Get thanas filtered by district.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/district-wise-Upazila</code></td><td>public</td><td>Get upazilas filtered by district.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/unions</code></td><td>public</td><td>Get all unions.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/upazila-wise-unions</code></td><td>public</td><td>Get unions filtered by upazila.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/getAllcountries</code></td><td>public</td><td>Get full country list.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#public_product_course">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#bank_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Bank APIs -->
+        <section id="bank_api">
+          <h3>Bank APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/banks</code></td><td>public</td><td>Get supported banks.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/bank</code></td><td>public</td><td>Get single bank details.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#location_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#notification_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Notification APIs -->
+        <section id="notification_api">
+          <h3>Notification APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/notifications</code></td><td>auth:sanctum</td><td>Get user notifications.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/notifications/unread</code></td><td>auth:sanctum</td><td>Get unread notifications.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/notifications/read</code></td><td>auth:sanctum</td><td>Mark single notification as read.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/notifications/read-all</code></td><td>auth:sanctum</td><td>Mark all notifications as read.</td></tr>
+                <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/notifications</code></td><td>auth:sanctum</td><td>Delete notification.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#bank_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#faq_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- FAQ APIs -->
+        <section id="faq_api">
+          <h3>FAQ &amp; Category APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/faqs/</code></td><td>public</td><td>Get all FAQs.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/faqs/store</code></td><td>public</td><td>Create new FAQ.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/faqs/update/{id}</code></td><td>public</td><td>Update FAQ.</td></tr>
+                <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/faqs/delete/{id}</code></td><td>public</td><td>Delete FAQ.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/get-faqs</code></td><td>public</td><td>Get FAQs (alternate).</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/categories/</code></td><td>public</td><td>Get all FAQ categories.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/categories/store</code></td><td>public</td><td>Create FAQ category.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/categories/update/{id}</code></td><td>public</td><td>Update FAQ category.</td></tr>
+                <tr><td><span class="badge-method badge-delete">DELETE</span></td><td><code>/categories/delete/{id}</code></td><td>public</td><td>Delete FAQ category.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#notification_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#ticket_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Support Tickets -->
+        <section id="ticket_api">
+          <h3>Support Ticket APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/tickets</code></td><td>public</td><td>Get public ticket list.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/store</code></td><td>auth:api</td><td>Create new support ticket.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/list</code></td><td>auth:api</td><td>Get logged-in user's tickets.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/update</code></td><td>auth:api</td><td>Update ticket parameters.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/delete?id=</code></td><td>auth:api</td><td>Delete ticket by ID.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/details?id=</code></td><td>auth:api</td><td>Get ticket details &amp; message thread.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/message/store?id=</code></td><td>auth:api</td><td>Send new message on ticket.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/message/update?id=</code></td><td>auth:api</td><td>Edit ticket message.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/message/delete?id=</code></td><td>auth:api</td><td>Delete ticket message.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/list</code></td><td>public</td><td>Public ticket list (Course API side).</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/details/{id}</code></td><td>public</td><td>Public ticket details (Course API side).</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#faq_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#chat_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Chat API -->
+        <section id="chat_api">
+          <h3>Chat API</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/chat</code></td><td>public</td><td>Send or receive chat messages.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#ticket_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#subscription_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Subscription & Shares -->
+        <section id="subscription_api">
+          <h3>Subscription &amp; Share APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/subscription-plans</code></td><td>public</td><td>Get subscription plans.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/purchase-subscription</code></td><td>auth:sanctum</td><td>Purchase subscription plan.</td></tr>
+                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/buy-share</code></td><td>auth:sanctum</td><td>Purchase company share units.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/my-share-details</code></td><td>auth:sanctum</td><td>Get owned share details.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#chat_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#hospital_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Hospital API -->
+        <section id="hospital_api">
+          <h3>Hospital API</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/hospitals</code></td><td>public</td><td>Get partner hospital listing.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#subscription_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#misc_api">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Charges API -->
+        <section id="misc_api">
+          <h3>Charges (Misc) APIs</h3>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-routes">
+              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/withdraw_charge</code></td><td>public</td><td>Get withdraw charge rate.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/sendMoney_charge</code></td><td>public</td><td>Get send-money charge rate.</td></tr>
+                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/Raffer_charge</code></td><td>public</td><td>Get referral bonus/charge rate.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#hospital_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#admin_module">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Admin Module -->
+        <section id="admin_module">
+          <h3>Admin Module <small class="text-muted">(reserved)</small></h3>
+          <p class="mt-3" style="margin: 20px 0;text-align: justify;">
+            This space is reserved for Admin Panel routes. Once the admin route list is added, it will be documented here following the same structure.
+          </p>
+          <div class="admin-placeholder mt-3">
+            <i class="bi bi-shield-lock" style="font-size:32px; color:rgb(50,101,243);"></i>
+            <p class="mt-3 mb-0"><b>Admin routes will be added here.</b></p>
+            <p class="text-muted mb-0">Paste the admin <code>routes/admin.php</code> file when ready.</p>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#misc_api">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#api_credits">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Credits -->
+        <section id="api_credits">
+          <h3>Credits &amp; Resource</h3>
+          <ul class="list">
+            <li>Generated directly from <code>routes/api.php</code> of the Golden life Platforn project.</li>
+            <li>Documented for internal/client development reference.</li>
+            <li>&copy; 2026 Golden life Platforn. All Rights Reserved.</li>
+          </ul>
+
+          <div class="row mt-4">
+            <div class="col border mr-2 text-center">
+              <a href="#admin_module">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+            <div class="col border ml-2 text-center">
+              <a href="#api_support">
+                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <hr class="divider">
+        
+        <!-- Support -->
+        <section id="api_support">
+          <h2>Support</h2>
+          <div class="alert alert-success mt-3">
+            <h6>Upcoming Documentation Features:</h6>
+            <ul class="mb-0">
+              <li>Admin Panel route mapping</li>
+              <li>Request and response payload examples</li>
+              <li>Exportable Postman collection</li>
+            </ul>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col border text-center">
+              <a href="#api_credits">
+                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
+              </a>
+            </div>
+          </div>
+        </section>
+		
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-dark text-white py-3">
+    <div class="container text-center">
+      <small>&copy; 2026 Golden life Platforn. All Rights Reserved.</small>
+    </div>
+  </footer>
+  
+</div>
+
+<!-- Back To Top Button --> 
+<a id="back-to-top" href="#" title="Back to Top"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript CDNs / Local Assets -->
+<script src="assets/vendor/jquery/jquery.min.js"></script> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
+<script src="assets/css/theme.js"></script>
+
+<script>
+  // Live Search functionality
+  document.getElementById('searchInput').addEventListener('input', function() {
+    var searchQuery = this.value.toLowerCase();
+    var tableRows = document.querySelectorAll('.table-routes tbody tr');
+    
+    tableRows.forEach(function(row) {
+      var text = row.textContent.toLowerCase();
+      if (text.indexOf(searchQuery) > -1) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
