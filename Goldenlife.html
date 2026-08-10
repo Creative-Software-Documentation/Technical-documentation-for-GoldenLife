@@ -5,12 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 <link href="assets/images/favicon.png" rel="icon" />
-<title>API Documentation | Golden life Platforn</title>
-<meta name="description" content="Golden life Platforn API Documentation">
+<title>API Documentation | Golden life Platform</title>
+<meta name="description" content="Golden life Platform API Documentation">
 <meta name="author" content="harnishdesign.net">
 
-<!-- Stylesheet
-============================== -->
+<!-- Stylesheet ============================== -->
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
 <!-- Font Awesome Icon -->
@@ -25,6 +24,7 @@
 
 <style>
   code { color:#d6336c; background:#f8f0f2; padding:2px 6px; border-radius:4px; }
+  pre { background:#f4f6f8; padding:15px; border-radius:6px; border:1px solid #e1e4e8; font-size:13px; }
   .badge-method { display:inline-block; min-width:60px; text-align:center; padding:4px 8px; border-radius:4px; color:#fff; font-weight:600; font-size:12px; }
   .badge-get { background:#2e7d32; }
   .badge-post { background:#1565c0; }
@@ -33,18 +33,19 @@
   .table-routes td, .table-routes th { vertical-align:middle; }
   .middleware-tag { background:#f1f3f5; border:1px solid #dee2e6; padding:2px 8px; border-radius:12px; font-size:12px; }
   .admin-placeholder { border:2px dashed rgb(50,101,243); border-radius:8px; padding:30px; text-align:center; background:#f8f9ff; }
+  .api-card { background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin-bottom:25px; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+  .api-title { font-size:18px; font-weight:700; color:#1e293b; margin-bottom:10px; }
+  .param-list li { margin-bottom:6px; }
 </style>
 
 </head>
 
 <body class="box" data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
 
-<!-- Document Wrapper   
-=============================== -->
+<!-- Document Wrapper =============================== -->
 <div id="main-wrapper"> 
   
-  <!-- Header
-  ============================ -->
+  <!-- Header ============================ -->
   <header id="header" class="sticky-top"> 
     <!-- Navbar -->
     <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
@@ -55,10 +56,9 @@
         </button>
         
         <!-- Logo --> 
-        <a class="logo ml-md-2" href="index.html" title="Golden life Platforn API Documentation"> 
-            <img src="assets/images/goldenlife.png" height="60px" width="180px" alt="Golden life Platforn API"/> 
+        <a class="logo ml-md-2" href="index.html" title="Golden life Platform API Documentation"> 
+            <img src="assets/images/goldenlife.png" height="60px" width="180px" alt="Golden life Platform API"/> 
         </a> 
-        
         <!-- Logo End -->
         
         <!-- Navbar Toggler -->
@@ -78,13 +78,12 @@
               <input id="searchInput" class="form-control border-left-0" type="search" placeholder="Search routes..." aria-label="Search" style="background-color: #f8f9fa; border-color: #ced4da; padding: 4px 8px;">
             </div>
           </form>                   
-          
         </div>
         <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
-          <li><a data-toggle="tooltip" href="https://x.com/CreativeSoftbd" target="_blank" title="" data-original-title="x"><i class="bi bi-twitter-x"></i></a></li>
-          <li><a data-toggle="tooltip" href="https://www.linkedin.com/company/creative-software-bangladesh/" target="_blank" title="" data-original-title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a data-toggle="tooltip" href="https://www.youtube.com/@CourierSoftwarebd" target="_blank" title="" data-original-title="youtube"><i class="fab fa-youtube"></i></a></li>
-          <li><a data-toggle="tooltip" href="https://www.facebook.com/CreativeSoftware.com.bd" target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://x.com/CreativeSoftbd" target="_blank" title="x"><i class="bi bi-twitter-x"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.linkedin.com/company/creative-software-bangladesh/" target="_blank" title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.youtube.com/@CourierSoftwarebd" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.facebook.com/CreativeSoftware.com.bd" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
         </ul>
       </div>
     </nav>
@@ -92,12 +91,10 @@
   </header>
   <!-- Header End --> 
   
-  <!-- Content
-  ============================ -->
+  <!-- Content ============================ -->
   <div id="content" role="main">
     
-    <!-- Sidebar Navigation
-    ============================ -->
+    <!-- Sidebar Navigation ============================ -->
     <div class="idocs-navigation bg-light">
       <ul class="nav flex-column" id="navList">
         <li class="nav-item"><a class="nav-link active text-primary" href="#api_start">Overview</a></li>
@@ -155,8 +152,7 @@
       </ul>
     </div>
     
-    <!-- Docs Content
-    ============================ -->
+    <!-- Docs Content ============================ -->
     <div class="idocs-content">
       <div class="container"> 
         
@@ -164,12 +160,12 @@
         <section id="api_start">
           <div class="row justify-content-center">
             <div class="mx-auto mb-4">
-              <h2>Golden life Platforn API <small class="lead">(FULL PROJECT OVERVIEW)</small></h2>
+              <h2>Golden life Platform API <small class="lead">(FULL PROJECT OVERVIEW)</small></h2>
 
               <div class="about">
                 <h3>About this API</h3>
                 <p class="paragraph" style="margin: 20px 0;text-align: justify;">
-                  This Laravel based REST API powers a multi-role Golden life Platforn that connects
+                  This Laravel based REST API powers a multi-role Golden life Platform that connects
                   <b>Students (customers/resellers)</b>, <b>Vendors (product sellers)</b> and
                   <b>Instructors (course sellers)</b> under a single system. The platform combines
                   e-commerce (product purchase &amp; delivery), an online course/learning marketplace,
@@ -237,7 +233,7 @@
             <div class="info">
               <h3>Framework</h3>
               <p>Built on <b>Laravel</b> and consumed by web / mobile apps as a JSON REST API.
-                All endpoints below are relative to your API base URL, e.g. <code>https://yourdomain.com/api</code>.</p>
+                All endpoints below are relative to your API base URL, e.g. <code>https://example.com/api</code>.</p>
 
               <h5>Authentication Guards</h5>
               <ul class="list">
@@ -278,62 +274,502 @@
           <h3>Authentication</h3>
           <p style="margin: 20px 0;text-align: justify;">Three separate identity types can register and log in: Student, Vendor and Instructor. Each has its own registration, OTP verification, login, forgot/reset password, and logout endpoints.</p>
 
-          <div id="auth_student" class="mb-4">
-            <h4>Student Authentication</h4>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped table-routes">
-                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-                <tbody>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/register</code></td><td>public</td><td>Register a new student account.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/verify-otp</code></td><td>public</td><td>Verify OTP sent during registration.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/login</code></td><td>public</td><td>Login with mobile/email &amp; password.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/login/send-otp</code></td><td>public</td><td>Send OTP for OTP-based student login.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/login/verify-otp</code></td><td>public</td><td>Verify OTP and log the student in.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/password/forgot</code></td><td>public</td><td>Send OTP for forgotten password.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/password/reset</code></td><td>public</td><td>Reset password using OTP.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/pin/forgot</code></td><td>public</td><td>Send OTP for forgotten wallet PIN.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/pin/reset</code></td><td>public</td><td>Reset wallet PIN using OTP.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/set-pin</code></td><td>auth:sanctum</td><td>Set wallet PIN for the first time.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/student/logout</code></td><td>auth:sanctum</td><td>Logout the current student session/token.</td></tr>
-                </tbody>
-              </table>
+          <!-- ================= STUDENT AUTH ================= -->
+          <div id="auth_student" class="mb-5">
+            <h4 class="text-primary border-bottom pb-2 mb-4">Student Authentication</h4>
+
+            <!-- Student Register -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Student Register</div>
+              <p>This endpoint allows you to register a new student account. An OTP is generated and sent to the provided mobile number via SSLWireless SMS gateway.</p>
+              
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code></p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/student/register' \
+--header 'Accept: application/json' \
+--form 'name="Rahim Uddin"' \
+--form 'email="rahim@example.com"' \
+--form 'mobile="01700000000"' \
+--form 'password="password123"' \
+--form 'password_confirmation="password123"' \
+--form 'refer_code="STD2025001"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "user_id": 12,
+  "message": "Registration successful! OTP sent to 01700000000",
+  "api_response": {
+    "status": "SUCCESS",
+    "status_code": 200,
+    "error_message": ""
+  }
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>name</code> (string, required): Full name of the student.</li>
+                <li><code>email</code> (string, required): Unique email address.</li>
+                <li><code>mobile</code> (string, required): 11 digit mobile number matching pattern <code>01XXXXXXXXX</code>.</li>
+                <li><code>password</code> (string, required): Minimum 6 characters.</li>
+                <li><code>password_confirmation</code> (string, required): Must match <code>password</code>.</li>
+                <li><code>refer_code</code> (string, optional): Affiliate ID of the referrer.</li>
+              </ul>
+            </div>
+
+            <!-- Verify Student OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Verify Student OTP</div>
+              <p>Validates the OTP sent during registration to activate the student account and returns a Sanctum access token.</p>
+
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code></p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/student/verify-otp' \
+--header 'Accept: application/json' \
+--form 'user_id="12"' \
+--form 'otp="4589"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Mobile number verified and logged in successfully!",
+  "token": "1|sanctum_token_string_here",
+  "user": {
+    "id": 12,
+    "name": "Rahim Uddin",
+    "email": "rahim@example.com",
+    "mobile": "01700000000",
+    "role": 2,
+    "status": 1
+  },
+  "student": {
+    "id": 5,
+    "affiliate_id": "STD20260012",
+    "referral_link": "https://example.com/student/register?ref=STD20260012"
+  }
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>user_id</code> (number, required): User ID returned during registration.</li>
+                <li><code>otp</code> (number, required): 4-digit OTP received via SMS.</li>
+              </ul>
+            </div>
+
+            <!-- Student Login -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Student Password Login</div>
+              <p>Logs in an existing student using email and password credential pair.</p>
+
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code></p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/student/login' \
+--header 'Accept: application/json' \
+--form 'email="rahim@example.com"' \
+--form 'password="password123"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Login successful.",
+  "token": "2|sanctum_token_string_here",
+  "user": {
+    "id": 12,
+    "name": "Rahim Uddin",
+    "email": "rahim@example.com",
+    "role": 2
+  },
+  "student": {
+    "id": 5,
+    "affiliate_id": "STD20260012",
+    "referral_link": "https://example.com/student/register?ref=STD20260012"
+  }
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>email</code> (string, required): Registered student email.</li>
+                <li><code>password</code> (string, required): Password (min 6 characters).</li>
+              </ul>
+            </div>
+
+            <!-- Send Login OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Send Student Login OTP</div>
+              <p>Sends a temporary OTP to student mobile number for passwordless login.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/login/send-otp' \
+--header 'Accept: application/json' \
+--form 'mobile="01700000000"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "OTP sent successfully to 01700000000"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>mobile</code> (string, required): Registered 11-digit mobile number.</li>
+              </ul>
+            </div>
+
+            <!-- Login with OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Verify Student Login OTP</div>
+              <p>Verifies the login OTP sent to the student mobile and generates authentication token.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/login/verify-otp' \
+--header 'Accept: application/json' \
+--form 'mobile="01700000000"' \
+--form 'otp="1234"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Login successful.",
+  "token": "3|sanctum_token_string_here",
+  "user": { "id": 12, "name": "Rahim Uddin" },
+  "student": { "id": 5, "affiliate_id": "STD20260012" }
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>mobile</code> (string, required): Registered 11-digit mobile number.</li>
+                <li><code>otp</code> (number, required): Received login OTP.</li>
+              </ul>
+            </div>
+
+            <!-- Student Forgot & Reset Password -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Forgot Password OTP &amp; Reset Password</div>
+              <p>Send OTP for password recovery via <code>/password/forgot</code> and reset password via <code>/password/reset</code>.</p>
+
+              <h6>1. Forgot Password Request</h6>
+              <pre><code>curl --location 'https://example.com/api/password/forgot' \
+--header 'Accept: application/json' \
+--form 'mobile="01700000000"'</code></pre>
+              <pre><code>{ "success": true, "message": "Reset OTP sent to your mobile." }</code></pre>
+
+              <h6>2. Reset Password Request</h6>
+              <pre><code>curl --location 'https://example.com/api/password/reset' \
+--header 'Accept: application/json' \
+--form 'mobile="01700000000"' \
+--form 'otp="8821"' \
+--form 'password="newpassword123"' \
+--form 'password_confirmation="newpassword123"'</code></pre>
+              <pre><code>{ "success": true, "message": "Password reset successful! You can now login with your new password." }</code></pre>
+            </div>
+
+            <!-- Student Logout -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Student Logout</div>
+              <p>Revokes the active Sanctum token for the current authenticated student session.</p>
+
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code><br><code>Authorization: Bearer &lt;token&gt;</code></p>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Logged out successfully."
+}</code></pre>
             </div>
           </div>
 
-          <div id="auth_vendor" class="mb-4">
-            <h4>Vendor Authentication</h4>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped table-routes">
-                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-                <tbody>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/register</code></td><td>public</td><td>Register a new vendor (seller) account.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/verify-otp</code></td><td>public</td><td>Verify OTP sent during vendor registration.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login/send-otp</code></td><td>public</td><td>Send OTP for vendor OTP-based login.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login/verify-otp</code></td><td>public</td><td>Verify OTP and log the vendor in.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/login</code></td><td>public</td><td>Login with mobile/email &amp; password.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/vendor/logout</code></td><td>auth:sanctum</td><td>Logout the current vendor session/token.</td></tr>
-                </tbody>
-              </table>
+
+          <!-- ================= VENDOR AUTH ================= -->
+          <div id="auth_vendor" class="mb-5">
+            <h4 class="text-primary border-bottom pb-2 mb-4">Vendor Authentication</h4>
+
+            <!-- Vendor Register -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Vendor Register</div>
+              <p>Registers a new vendor account (Role 3), creates a vendor profile with seller ID, and sends verification OTP via SMS.</p>
+
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code></p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/vendor/register' \
+--header 'Accept: application/json' \
+--form 'name="Karim Electronics"' \
+--form 'email="vendor@example.com"' \
+--form 'mobile="01800000000"' \
+--form 'password="password123"' \
+--form 'password_confirmation="password123"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "user_id": 45,
+  "message": "Registration successful! OTP sent to 01800000000"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>name</code> (string, required): Vendor/owner full name.</li>
+                <li><code>email</code> (string, required): Unique vendor email.</li>
+                <li><code>mobile</code> (string, required): Mobile number (11 digits starting 01).</li>
+                <li><code>password</code> (string, required): Minimum 6 characters.</li>
+                <li><code>password_confirmation</code> (string, required): Confirmation matching password.</li>
+              </ul>
+            </div>
+
+            <!-- Verify Vendor OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Verify Vendor OTP</div>
+              <p>Verifies mobile OTP for vendor registration and activates account status.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/vendor/verify-otp' \
+--header 'Accept: application/json' \
+--form 'user_id="45"' \
+--form 'otp="7741"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Vendor mobile verified successfully!"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>user_id</code> (number, required): Vendor User ID.</li>
+                <li><code>otp</code> (number, required): OTP code.</li>
+              </ul>
+            </div>
+
+            <!-- Vendor Login (Password) -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Vendor Password Login</div>
+              <p>Authenticates vendor with email and password, validating active status and role 3.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/vendor/login' \
+--header 'Accept: application/json' \
+--form 'email="vendor@example.com"' \
+--form 'password="password123"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "status": true,
+  "message": "Login successful.",
+  "user": {
+    "id": 45,
+    "name": "Karim Electronics",
+    "email": "vendor@example.com",
+    "role": 3
+  },
+  "token": "4|vendor_sanctum_token"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>email</code> (string, required): Vendor email.</li>
+                <li><code>password</code> (string, required): Account password.</li>
+              </ul>
+            </div>
+
+            <!-- Vendor Login OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Vendor OTP Login (Send &amp; Verify)</div>
+              <p>Send OTP via <code>/vendor/login/send-otp</code> and verify login via <code>/vendor/login/verify-otp</code>.</p>
+
+              <h6>1. Send Vendor Login OTP</h6>
+              <pre><code>curl --location 'https://example.com/api/vendor/login/send-otp' \
+--header 'Accept: application/json' \
+--form 'mobile="01800000000"'</code></pre>
+              <pre><code>{ "success": true, "message": "OTP sent successfully to 01800000000" }</code></pre>
+
+              <h6>2. Verify Vendor Login OTP</h6>
+              <pre><code>curl --location 'https://example.com/api/vendor/login/verify-otp' \
+--header 'Accept: application/json' \
+--form 'mobile="01800000000"' \
+--form 'otp="6543"'</code></pre>
+              <pre><code>{
+  "success": true,
+  "message": "Login successful.",
+  "token": "5|vendor_otp_token",
+  "user": { "id": 45, "name": "Karim Electronics", "role": 3 },
+  "vendor": { "id": 8, "seller_id": "SL-010126-45" }
+}</code></pre>
+            </div>
+
+            <!-- Vendor Logout -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Vendor Logout</div>
+              <p>Revokes active vendor access token.</p>
+              <h6>HEADERS</h6>
+              <p><code>Authorization: Bearer &lt;token&gt;</code></p>
+              <pre><code>{ "status": true, "message": "Logout successful." }</code></pre>
             </div>
           </div>
 
-          <div id="auth_instructor" class="mb-4">
-            <h4>Instructor Authentication</h4>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped table-routes">
-                <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-                <tbody>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/register</code></td><td>public</td><td>Register a new instructor account.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/verify-otp</code></td><td>public</td><td>Verify OTP sent during instructor registration.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login</code></td><td>public</td><td>Login with email/mobile &amp; password.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login-otp-send</code></td><td>public</td><td>Send OTP for instructor OTP-based login.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/login-otp-verify</code></td><td>public</td><td>Verify OTP and log the instructor in.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/forgot-password-otp</code></td><td>public</td><td>Send OTP for forgotten password.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/reset-password</code></td><td>public</td><td>Reset password using OTP.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/resend-otp</code></td><td>public</td><td>Resend the last OTP to the instructor.</td></tr>
-                  <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/instructor/logout</code></td><td>auth:sanctum</td><td>Logout the current instructor session.</td></tr>
-                </tbody>
-              </table>
+
+          <!-- ================= INSTRUCTOR AUTH ================= -->
+          <div id="auth_instructor" class="mb-5">
+            <h4 class="text-primary border-bottom pb-2 mb-4">Instructor Authentication</h4>
+
+            <!-- Instructor Register -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Instructor Register</div>
+              <p>Registers an instructor (Role 4), generates instructor profile with unique ID, and sends SMS OTP.</p>
+
+              <h6>HEADERS</h6>
+              <p><code>Accept: application/json</code></p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/instructor/register' \
+--header 'Accept: application/json' \
+--form 'name="Prof. Kamal"' \
+--form 'email="instructor@example.com"' \
+--form 'mobile="01900000000"' \
+--form 'password="password123"' \
+--form 'password_confirmation="password123"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "user_id": 88,
+  "message": "Registration successful! OTP sent to 01900000000"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>name</code> (string, required): Instructor full name.</li>
+                <li><code>email</code> (string, required): Unique instructor email.</li>
+                <li><code>mobile</code> (string, required): Valid mobile number (01XXXXXXXXX).</li>
+                <li><code>password</code> (string, required): Minimum 6 characters.</li>
+                <li><code>password_confirmation</code> (string, required): Must match password.</li>
+              </ul>
+            </div>
+
+            <!-- Verify Instructor OTP -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Verify Instructor OTP</div>
+              <p>Verifies OTP code for newly registered instructor.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/instructor/verify-otp' \
+--header 'Accept: application/json' \
+--form 'user_id="88"' \
+--form 'otp="9912"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "success": true,
+  "message": "Mobile verified successfully!"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>user_id</code> (number, required): Instructor User ID.</li>
+                <li><code>otp</code> (number, required): Verification OTP code.</li>
+              </ul>
+            </div>
+
+            <!-- Instructor Login -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Instructor Password Login</div>
+              <p>Authenticates an instructor using email and password credentials.</p>
+
+              <h6>Example Request</h6>
+              <pre><code>curl --location 'https://example.com/api/instructor/login' \
+--header 'Accept: application/json' \
+--form 'email="instructor@example.com"' \
+--form 'password="password123"'</code></pre>
+
+              <h6>Example Response (Body)</h6>
+              <pre><code>{
+  "status": true,
+  "message": "Login successful.",
+  "user": {
+    "id": 88,
+    "name": "Prof. Kamal",
+    "email": "instructor@example.com",
+    "role": 4
+  },
+  "token": "6|instructor_token"
+}</code></pre>
+
+              <h6>Request Body Parameters</h6>
+              <ul class="param-list">
+                <li><code>email</code> (string, required): Instructor email.</li>
+                <li><code>password</code> (string, required): Password.</li>
+              </ul>
+            </div>
+
+            <!-- Instructor OTP Login -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Instructor OTP Login (Send &amp; Verify)</div>
+              <p>Send OTP via <code>/instructor/login-otp-send</code> and verify login via <code>/instructor/login-otp-verify</code>.</p>
+
+              <h6>1. Send Login OTP</h6>
+              <pre><code>curl --location 'https://example.com/api/instructor/login-otp-send' \
+--header 'Accept: application/json' \
+--form 'mobile="01900000000"'</code></pre>
+              <pre><code>{ "success": true, "message": "OTP sent successfully to 01900000000" }</code></pre>
+
+              <h6>2. Verify Login OTP</h6>
+              <pre><code>curl --location 'https://example.com/api/instructor/login-otp-verify' \
+--header 'Accept: application/json' \
+--form 'mobile="01900000000"' \
+--form 'otp="3344"'</code></pre>
+              <pre><code>{
+  "success": true,
+  "message": "Login successful.",
+  "token": "7|instructor_otp_token",
+  "user": { "id": 88, "name": "Prof. Kamal", "role": 4 },
+  "instructor": { "id": 14, "instructor_id": "IST01012688" }
+}</code></pre>
+            </div>
+
+            <!-- Resend OTP & Forgot Password -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Instructor Password Reset &amp; Resend OTP</div>
+
+              <h6>1. Resend OTP Endpoint</h6>
+              <p>Endpoint: <code>/resend-otp</code></p>
+              <pre><code>curl --location 'https://example.com/api/resend-otp' \
+--header 'Accept: application/json' \
+--form 'user_id="88"' \
+--form 'purpose="verification"'</code></pre>
+              <pre><code>{ "success": true, "message": "একটি নতুন OTP সফলভাবে পাঠানো হয়েছে।" }</code></pre>
+
+              <h6>2. Forgot Password OTP</h6>
+              <p>Endpoint: <code>/instructor/forgot-password-otp</code></p>
+              <pre><code>curl --location 'https://example.com/api/instructor/forgot-password-otp' \
+--header 'Accept: application/json' \
+--form 'mobile="01900000000"'</code></pre>
+              <pre><code>{ "success": true, "message": "Reset OTP sent to your mobile." }</code></pre>
+
+              <h6>3. Reset Password</h6>
+              <p>Endpoint: <code>/instructor/reset-password</code></p>
+              <pre><code>curl --location 'https://example.com/api/instructor/reset-password' \
+--header 'Accept: application/json' \
+--form 'mobile="01900000000"' \
+--form 'otp="5521"' \
+--form 'password="newpass123"' \
+--form 'password_confirmation="newpass123"'</code></pre>
+              <pre><code>{ "success": true, "message": "Password reset successful! You can now login with your new password." }</code></pre>
+            </div>
+
+            <!-- Instructor Logout -->
+            <div class="api-card">
+              <div class="api-title"><span class="badge-method badge-post">POST</span> Instructor Logout</div>
+              <p>Revokes active instructor Sanctum token.</p>
+              <h6>HEADERS</h6>
+              <p><code>Authorization: Bearer &lt;token&gt;</code></p>
+              <pre><code>{ "status": true, "message": "Logout successful." }</code></pre>
             </div>
           </div>
 
@@ -851,8 +1287,6 @@
                 <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/message/store?id=</code></td><td>auth:api</td><td>Send new message on ticket.</td></tr>
                 <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/ticket/message/update?id=</code></td><td>auth:api</td><td>Edit ticket message.</td></tr>
                 <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/message/delete?id=</code></td><td>auth:api</td><td>Delete ticket message.</td></tr>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/list</code></td><td>public</td><td>Public ticket list (Course API side).</td></tr>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/ticket/details/{id}</code></td><td>public</td><td>Public ticket details (Course API side).</td></tr>
               </tbody>
             </table>
           </div>
@@ -899,224 +1333,16 @@
           </div>
         </section>
 
-        <hr class="divider">
-
-        <!-- Subscription & Shares -->
-        <section id="subscription_api">
-          <h3>Subscription &amp; Share APIs</h3>
-          <div class="table-responsive mt-3">
-            <table class="table table-bordered table-striped table-routes">
-              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-              <tbody>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/subscription-plans</code></td><td>public</td><td>Get subscription plans.</td></tr>
-                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/purchase-subscription</code></td><td>auth:sanctum</td><td>Purchase subscription plan.</td></tr>
-                <tr><td><span class="badge-method badge-post">POST</span></td><td><code>/buy-share</code></td><td>auth:sanctum</td><td>Purchase company share units.</td></tr>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/my-share-details</code></td><td>auth:sanctum</td><td>Get owned share details.</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col border mr-2 text-center">
-              <a href="#chat_api">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-            <div class="col border ml-2 text-center">
-              <a href="#hospital_api">
-                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Hospital API -->
-        <section id="hospital_api">
-          <h3>Hospital API</h3>
-          <div class="table-responsive mt-3">
-            <table class="table table-bordered table-striped table-routes">
-              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-              <tbody>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/hospitals</code></td><td>public</td><td>Get partner hospital listing.</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col border mr-2 text-center">
-              <a href="#subscription_api">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-            <div class="col border ml-2 text-center">
-              <a href="#misc_api">
-                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Charges API -->
-        <section id="misc_api">
-          <h3>Charges (Misc) APIs</h3>
-          <div class="table-responsive mt-3">
-            <table class="table table-bordered table-striped table-routes">
-              <thead><tr><th>Method</th><th>Endpoint</th><th>Middleware</th><th>Description</th></tr></thead>
-              <tbody>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/withdraw_charge</code></td><td>public</td><td>Get withdraw charge rate.</td></tr>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/sendMoney_charge</code></td><td>public</td><td>Get send-money charge rate.</td></tr>
-                <tr><td><span class="badge-method badge-get">GET</span></td><td><code>/Raffer_charge</code></td><td>public</td><td>Get referral bonus/charge rate.</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col border mr-2 text-center">
-              <a href="#hospital_api">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-            <div class="col border ml-2 text-center">
-              <a href="#admin_module">
-                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Admin Module -->
-        <section id="admin_module">
-          <h3>Admin Module <small class="text-muted">(reserved)</small></h3>
-          <p class="mt-3" style="margin: 20px 0;text-align: justify;">
-            This space is reserved for Admin Panel routes. Once the admin route list is added, it will be documented here following the same structure.
-          </p>
-          <div class="admin-placeholder mt-3">
-            <i class="bi bi-shield-lock" style="font-size:32px; color:rgb(50,101,243);"></i>
-            <p class="mt-3 mb-0"><b>Admin routes will be added here.</b></p>
-            <p class="text-muted mb-0">Paste the admin <code>routes/admin.php</code> file when ready.</p>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col border mr-2 text-center">
-              <a href="#misc_api">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-            <div class="col border ml-2 text-center">
-              <a href="#api_credits">
-                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Credits -->
-        <section id="api_credits">
-          <h3>Credits &amp; Resource</h3>
-          <ul class="list">
-            <li>Generated directly from <code>routes/api.php</code> of the Golden life Platforn project.</li>
-            <li>Documented for internal/client development reference.</li>
-            <li>&copy; 2026 Golden life Platforn. All Rights Reserved.</li>
-          </ul>
-
-          <div class="row mt-4">
-            <div class="col border mr-2 text-center">
-              <a href="#admin_module">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-            <div class="col border ml-2 text-center">
-              <a href="#api_support">
-                <p class="mt-2">Next<i class="bi bi-arrow-right-circle px-2"></i></p>
-              </a>
-            </div>
-          </div>
-        </section>
-        
-        <hr class="divider">
-        
-        <!-- Support -->
-        <section id="api_support">
-          <h2>Support</h2>
-          <div class="alert alert-success mt-3">
-            <h6>Upcoming Documentation Features:</h6>
-            <ul class="mb-0">
-              <li>Admin Panel route mapping</li>
-              <li>Request and response payload examples</li>
-              <li>Exportable Postman collection</li>
-            </ul>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col border text-center">
-              <a href="#api_credits">
-                <p class="mt-2"><i class="bi bi-arrow-left-circle px-2"></i>Previous</p>
-              </a>
-            </div>
-          </div>
-        </section>
-		
       </div>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer id="footer" class="bg-dark text-white py-3">
-    <div class="container text-center">
-      <small>&copy; 2026 Golden life Platforn. All Rights Reserved.</small>
-    </div>
-  </footer>
-  
 </div>
 
-<!-- Back To Top Button --> 
-<a id="back-to-top" href="#" title="Back to Top"><i class="fa fa-chevron-up"></i></a> 
-
-<!-- JavaScript CDNs / Local Assets -->
-<script src="assets/vendor/jquery/jquery.min.js"></script> 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
-<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
-<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
-<script src="assets/css/theme.js"></script>
-
-<script>
-  // Live Search functionality
-  document.getElementById('searchInput').addEventListener('input', function() {
-    var searchQuery = this.value.toLowerCase();
-    var tableRows = document.querySelectorAll('.table-routes tbody tr');
-    
-    tableRows.forEach(function(row) {
-      var text = row.textContent.toLowerCase();
-      if (text.indexOf(searchQuery) > -1) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-  });
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-</script>
-
+<!-- Scripts -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/highlight.js/highlight.min.js"></script>
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>
